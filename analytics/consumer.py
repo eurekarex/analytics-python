@@ -53,6 +53,7 @@ class Consumer(Thread):
             success = True
         except Exception as e:
             self.log.error('error uploading: %s', e)
+            print(batch)
             success = False
             if self.on_error:
                 self.on_error(e, batch)
